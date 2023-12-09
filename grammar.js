@@ -418,6 +418,7 @@ module.exports = grammar({
         $.keyword_varying,
       )
     ),
+    keyword_varchar2: _ => make_keyword("varchar2"),
     keyword_nvarchar: _ => make_keyword("nvarchar"),
     keyword_text: _ => make_keyword("text"),
     keyword_string: _ => make_keyword("string"),
@@ -483,6 +484,7 @@ module.exports = grammar({
 
         $.char,
         $.varchar,
+        $.varchar2,
         $.nchar,
         $.nvarchar,
         $.numeric,
@@ -581,6 +583,7 @@ module.exports = grammar({
     ),
     char: $ => parametric_type($, $.keyword_char),
     varchar: $ => parametric_type($, $.keyword_varchar),
+    varchar2: $ => parametric_type($, $.keyword_varchar2),
     nchar: $ => parametric_type($, $.keyword_nchar),
     nvarchar: $ => parametric_type($, $.keyword_nvarchar),
 

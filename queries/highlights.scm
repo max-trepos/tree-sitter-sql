@@ -360,6 +360,7 @@
   (keyword_char)
   (keyword_nchar)
   (keyword_varchar)
+  (keyword_varchar2)
   (keyword_nvarchar)
   (keyword_varying)
   (keyword_text)

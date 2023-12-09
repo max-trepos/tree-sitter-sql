@@ -824,6 +824,7 @@ CREATE TABLE type_test (
   a_character CHARACTER,
   a_sized_char CHAR (10),
   a_varchar VARCHAR (10),
+  a_varchar2 VARCHAR2 (10),
   a_nvarchar NVARCHAR,
   a_nvarchar_precision NVARCHAR (10),
   a_character_varying CHARACTER VARYING (10),
@@ -982,6 +983,11 @@ CREATE TABLE type_test (
           name: (identifier)
           type: (varchar
             (keyword_varchar)
+            size: (literal)))
+        (column_definition
+          name: (identifier)
+          type: (varchar2
+            (keyword_varchar2)
             size: (literal)))
         (column_definition
           name: (identifier)
