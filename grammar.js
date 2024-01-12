@@ -399,6 +399,7 @@ module.exports = grammar({
     keyword_bigint: _ => choice(make_keyword("bigint"),make_keyword("int8")),
     keyword_decimal: _ => make_keyword("decimal"),
     keyword_numeric: _ => make_keyword("numeric"),
+    keyword_number: _ => make_keyword("number"),
     keyword_real: _ => choice(make_keyword("real"),make_keyword("float4")),
     keyword_float: _ => make_keyword("float"),
     keyword_double: _ => make_keyword("double"),
@@ -476,6 +477,7 @@ module.exports = grammar({
         $.bigint,
         $.decimal,
         $.numeric,
+        $.number,
         $.double,
         $.float,
 
@@ -580,6 +582,10 @@ module.exports = grammar({
     numeric: $ => choice(
       parametric_type($, $.keyword_numeric, ['precision']),
       parametric_type($, $.keyword_numeric, ['precision', 'scale']),
+    ),
+    number: $ => choice(
+      parametric_type($, $.keyword_number, ['precision']),
+      parametric_type($, $.keyword_number, ['precision', 'scale']),
     ),
     char: $ => parametric_type($, $.keyword_char),
     varchar: $ => parametric_type($, $.keyword_varchar),

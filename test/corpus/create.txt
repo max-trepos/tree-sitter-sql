@@ -814,6 +814,9 @@ CREATE TABLE type_test (
   a_numeric NUMERIC,
   a_sized_numeric NUMERIC (8),
   a_sized_numeric_with_scale NUMERIC (8, 4),
+  a_number NUMBER,
+  a_sized_number NUMBER (8),
+  a_sized_number_with_scale NUMBER (8, 4),
   a_real REAL,
   a_double_precision DOUBLE PRECISION,
   a_money MONEY,
@@ -940,6 +943,21 @@ CREATE TABLE type_test (
           name: (identifier)
           type: (numeric
             (keyword_numeric)
+            precision: (literal)
+            scale: (literal)))
+        (column_definition
+          name: (identifier)
+          type: (number
+            (keyword_number)))
+        (column_definition
+          name: (identifier)
+          type: (number
+            (keyword_number)
+            precision: (literal)))
+        (column_definition
+          name: (identifier)
+          type: (number
+            (keyword_number)
             precision: (literal)
             scale: (literal)))
         (column_definition

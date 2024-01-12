@@ -353,6 +353,7 @@
   (keyword_float)
   (keyword_double)
   (keyword_numeric)
+  (keyword_number)
   (keyword_real)
   (double)
   (keyword_money)
